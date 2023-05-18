@@ -1,0 +1,22 @@
+<h1>User Information</h1>
+<br>
+
+<div>
+  <h3>Name:</h3>
+  <%= @user.username %>
+</div>
+
+<div>
+  <h3>E-mail:</h3>
+  <%= @user.email %>
+</div>
+
+<ul>
+  <li><%= link_to 'Edit', edit_user_path(@user) %>
+  <li><%= link_to 'Destroy', user_path(@user), data: {
+                                                    turbo_method: :delete,
+                                                    turbo_confirm: 'Are you sure?'
+                                                    }%>
+  </li>
+</ul>
+<%= link_to 'Home', root_path %>
